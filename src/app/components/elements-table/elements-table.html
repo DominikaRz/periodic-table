@@ -1,0 +1,77 @@
+<!--elements-table.html-->
+
+<!--Search input-->
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Search fields</mat-label>
+    <input matInput [formControl]="searchField" placeholder="Start writing to search">
+    <!--clear the search field if not empty-->
+    @if(searchField.value !== ''){
+      <mat-icon matSuffix (click)="clearSearchField()" class="cursor-pointer">close</mat-icon>
+    }
+      <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+
+<!--Table with periodic elements-->
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource()">
+ 
+    <!-- Position Column -->
+    <ng-container matColumnDef="position"> 
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell 
+        *matCellDef="let element"
+      > 
+        {{element.position}} 
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell 
+        class="cursor-pointer"
+        *matCellDef="let element" 
+        (click)="openEditDialog(element, 'name')"
+      > 
+        {{element.name}} 
+      </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell 
+        class="cursor-pointer"
+        *matCellDef="let element"
+        (click)="openEditDialog(element, 'weight')"
+      > 
+        {{element.weight}} 
+      </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell 
+        class="cursor-pointer"
+        *matCellDef="let element"
+        (click)="openEditDialog(element, 'symbol')"
+      > 
+      {{element.symbol}} </td>
+    </ng-container>
+
+    <!-- Edit Column 
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let element"> 
+         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+      </td>
+    </ng-container>-->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
+
+       

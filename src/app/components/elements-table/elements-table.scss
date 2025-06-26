@@ -1,0 +1,76 @@
+/*element-table.scss*/
+
+/* Table styling */
+.table { width: 100%; }
+.full-width{ width: 100%; }
+
+.mat-column-position {
+  width: auto;
+  border-right: 1px solid currentColor;
+  padding-right: 10px;
+  padding-left: 5px;
+  text-align: center;
+}
+
+.mat-column-name {
+  padding-left: 10px;
+  padding-right: 4px;
+  font-size: 17px;
+}
+
+.mat-column-weight { 
+  font-style: italic; 
+  font-size: 13px;
+  padding: 10px;
+}
+
+.mat-column-symbol {
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* styling the links for dialog */
+.cursor-pointer{ cursor: pointer; }
+.cursor-pointer:hover { color: var(--mat-sys-primary); }
+
+
+/* For bigger devices */
+@media screen and (min-width: 700px) {
+  .mat-column-position { padding-right: 24px; }
+  .mat-column-name {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+  .mat-column-weight { font-style: italic; }
+  .mat-column-symbol { width: 32px; }
+}
+
+/*for ultra small devices*/
+@media screen and (max-width: 343px) {
+  .mat-column-position {
+    width: auto;
+    padding: 1vw;
+  }
+
+  .mat-column-name {
+    padding-left: 2vw;
+    padding-right: 1vw;
+    font-size: 5vw;
+  }
+
+  .mat-column-weight { 
+    font-style: italic; 
+    font-size: 4vw;
+    padding: 1vw;
+  }
+
+  .mat-column-symbol {
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+    padding: 1vw;
+    font-size: 5vw;
+  }
+}

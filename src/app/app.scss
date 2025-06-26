@@ -1,0 +1,50 @@
+/*app.scss*/
+
+@use '@angular/material' as mat;
+:host{
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--mat-sys-surface) !important; 
+}
+
+main{
+    align-items: center !important;
+    background-color: var(--mat-sys-surface);
+    min-height: 100vh;
+}
+section{ padding: 10% 8%; } /* for better view */
+
+
+
+/* Title styling */
+h1{ 
+    color: var(--mat-sys-primary) !important; 
+    margin: 2rem 0;
+}
+
+/* Edit information text */
+.mat-icon{ 
+    vertical-align: text-bottom; 
+    margin-right: 5px;
+} 
+p{ 
+  color: var(--mat-sys-inverse-primary); 
+  font-size:small;
+  display: flex; 
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+/* For bigger devices */
+@media screen and (min-width: 700px) {
+  h1{ font-size: 40px; }
+  p{ font-size: medium; }
+  section{ padding: 5% 8%; } /* for better view */
+}
+
+/*for ultra small devices */
+@media screen and (max-width: 343px) {
+  h1{ font-size: 10vw; }
+  p{ font-size: smaller; }
+}
