@@ -1,6 +1,6 @@
 # PeriodicTable
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3 and is build in [GitHub Pages](dominikarz.github.io/periodic-table/browser/index.html). It is also deployed on my [private server](https://projects.wmarzeniach.com/periodic-table/).
 
 ## Development server
 
